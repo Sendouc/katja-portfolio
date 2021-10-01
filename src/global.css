@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Syncopate&family=Work+Sans&display=swap");
+
+:root {
+  --bg: #eeeeee;
+  --theme: #674eff;
+  --text: #080079;
+
+  background-color: var(--bg);
+  font-family: "Work Sans", sans-serif;
+  color: var(--text);
+}
