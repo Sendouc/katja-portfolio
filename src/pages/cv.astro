@@ -1,0 +1,53 @@
+---
+  import experience from "../data/job-experience.json"
+  import education from "../data/education.json"
+  import Layout from "../components/Layout.astro"
+---
+
+<style>
+  .title-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+
+  b {
+    max-width: 36rem;
+  }
+
+  .desc {
+    margin-top: 0.5rem;
+    max-width: 36rem;
+  }
+
+  .education {
+    margin-top: 4rem;
+  }
+</style>
+
+<Layout>
+  <div>
+    <h2>Job experience</h2>
+    {experience.map(job => (
+      <>
+        <div class="title-container">
+          <b>{job.title}</b>
+          <div>{job.year}</div>
+        </div>
+        <div class="desc">{job.desc}</div>
+      </>
+    ))}
+  </div>
+  <div class="education">
+    <h2>Education</h2>
+    {education.map(ed => (
+      <>
+        <div class="title-container">
+          <b>{ed.title}</b>
+          <div>{ed.year}</div>
+        </div>
+      </>
+    ))}
+  </div>
+</Layout>

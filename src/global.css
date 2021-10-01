@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Syncopate&family=Work+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Syncopate&family=Work+Sans:wght@400;700&display=swap");
 
 :root {
   --bg: #eeeeee;
@@ -8,4 +8,16 @@
   background-color: var(--bg);
   font-family: "Work Sans", sans-serif;
   color: var(--text);
+}
+
+h2 {
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin: 0;
+}
+
+body {
+  max-width: 48rem;
+  margin: 0 auto;
 }
