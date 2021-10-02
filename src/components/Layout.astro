@@ -1,7 +1,7 @@
 ---
 import "../global.css"
 import Nav from "./Nav.astro"
-const {title} = Astro.props;
+const { title, activeLink } = Astro.props;
 ---
 <html lang="en">
   <meta charset="utf-8" />
@@ -12,7 +12,7 @@ const {title} = Astro.props;
     <title>Katja Oderychev - {title}</title>
   </head>
   <body>
-    <Nav />
+    <Nav activeLink={activeLink ?? ""} />
     <slot />
   </body>
 </html>

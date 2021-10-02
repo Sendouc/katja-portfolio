@@ -1,3 +1,7 @@
+---
+const { activeLink } = Astro.props
+---
+
 <style>
   nav {
     text-align: center;
@@ -18,6 +22,11 @@
     padding: 0 1rem;
   }
 
+  .active {
+    border-bottom: 3px solid;
+    border-color: var(--theme);
+  }
+
   .katja {
     color: var(--theme);
     font-family: "Syncopate", sans-serif;
@@ -30,9 +39,9 @@
 <nav>
   <a class="katja" href="/">KATJA<br/>ODERYCHEV</a>
   <div class="links-container">
-    <a href="/cv">CV & Contact</a>
-    <a href="/objects">Objects</a>
-    <a href="/2d">2D Works</a>
-    <a href="/3d">3D Works</a>
+    <a href="/cv"><span class={activeLink === "cv" ? "active" : ""}>CV & Contact</span></a>
+    <a href="/objects"><span class={activeLink === "objects" ? "active" : ""}>Objects</span></a>
+    <a href="/2d"><span class={activeLink === "2d" ? "active" : ""}>2D Works</span></a>
+    <a href="/3d"><span class={activeLink === "3d" ? "active" : ""}>3D Works</span></a>
   </div>
 </nav>
