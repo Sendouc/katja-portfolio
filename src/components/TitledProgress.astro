@@ -1,0 +1,35 @@
+---
+const { title, progress } = Astro.props
+---
+
+<style>
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0;
+  }
+
+  progress {
+    width: 6rem;
+    appearance: none;
+    border-radius: 7px;
+  }
+  progress::-webkit-progress-bar {
+    background-color: var(--secondary-bg);
+    border-radius: 7px;
+  }
+  progress::-webkit-progress-value {
+    background-color: var(--theme);
+    border-radius: 7px;
+  }
+  progress::-moz-progress-bar {
+    background-color: var(--theme);
+    border-radius: 7px;
+  }
+</style> 
+
+<div class="container">
+  <div>{title}</div>
+  <progress max="100" value={progress}></progress>
+</div>

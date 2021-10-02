@@ -1,10 +1,19 @@
 ---
   import experience from "../data/job-experience.json"
   import education from "../data/education.json"
+  import skills from "../data/skills.json"
+  import languages from "../data/languages.json"
   import Layout from "../components/Layout.astro"
+  import TitledProgress from "../components/TitledProgress.astro"
 ---
 
 <style>
+  .container {
+    display: grid;
+    gap: 4rem;
+    grid-template-columns: 2.75fr 1fr;
+  }
+
   .title-container {
     display: flex;
     align-items: flex-start;
@@ -13,41 +22,56 @@
   }
 
   b {
-    max-width: 36rem;
+    max-width: 32rem;
   }
 
   .desc {
     margin-top: 0.5rem;
     max-width: 36rem;
   }
-
-  .education {
-    margin-top: 4rem;
-  }
 </style>
 
 <Layout>
-  <div>
-    <h2>Job experience</h2>
-    {experience.map(job => (
-      <>
-        <div class="title-container">
-          <b>{job.title}</b>
-          <div>{job.year}</div>
-        </div>
-        <div class="desc">{job.desc}</div>
-      </>
-    ))}
-  </div>
-  <div class="education">
-    <h2>Education</h2>
-    {education.map(ed => (
-      <>
-        <div class="title-container">
-          <b>{ed.title}</b>
-          <div>{ed.year}</div>
-        </div>
-      </>
-    ))}
+  <div class="container">
+    <div>
+      <h2>Job experience</h2>
+      {experience.map(job => (
+        <>
+          <div class="title-container">
+            <b>{job.title}</b>
+            <div>{job.year}</div>
+          </div>
+          <div class="desc">{job.desc}</div>
+        </>
+      ))}
+    </div>
+    <div>
+      <h2>Contact</h2>
+      <a href="mailto:katjavalentina@gmail.com">katjavalentina@gmail.com</a>
+    </div>
+    <div>
+      <h2>Education</h2>
+      {education.map(ed => (
+        <>
+          <div class="title-container">
+            <b>{ed.title}</b>
+            <div>{ed.year}</div>
+          </div>
+        </>
+      ))}
+    </div>
+    <div>
+      <h2>Skills</h2>
+      {skills.map(skill => (
+        <TitledProgress title={skill.title} progress={skill.progress} />
+      ))}
+    </div>
+    <div></div>
+    <div>
+      <h2>Languages</h2>
+      {languages.map(lang => (
+        <TitledProgress title={lang.title} progress={lang.progress} />
+      ))}
+    </div>
   </div>
 </Layout>
