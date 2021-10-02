@@ -1,0 +1,39 @@
+---
+import Layout from "../components/Layout.astro"
+import imageData from "../data/images.json"
+---
+
+<style>
+  .container {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .gallery {
+    display: flex;
+    flex-direction: column;
+    max-width: 20rem;
+    gap: 1rem;
+  }
+</style>
+
+<Layout>
+    <div class="container">
+      <div class="gallery">
+        {imageData["2d"][0].map(src => (
+          <img src={`/img/2d/${src}`} />
+        ))}
+      </div>
+      <div class="gallery">
+        {imageData["2d"][1].map(src => (
+          <img src={`/img/2d/${src}`} />
+        ))}
+      </div>
+      <div class="gallery">
+        {imageData["2d"][2].map(src => (
+          <img src={`/img/2d/${src}`} />
+        ))}
+      </div>
+    </div>
+</Layout>
