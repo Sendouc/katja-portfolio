@@ -1,0 +1,49 @@
+---
+const { images, prefix } = Astro.props
+
+const imageArrays = images.reduce((acc, cur) => {
+  let targetArr = acc[0]
+
+  acc.forEach(arr => {
+    if (arr.length < targetArr.length) {
+      targetArr = arr
+    }
+  })
+
+  targetArr.push(cur)
+  return acc
+}, [[], [], []])
+---
+
+<style>
+  .container {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .gallery {
+    display: flex;
+    flex-direction: column;
+    max-width: 20rem;
+    gap: 1rem;
+  }
+</style>
+
+<div class="container">
+  <div class="gallery">
+    {imageArrays[0].map(src => (
+      <img src={`${prefix}${src}`} />
+    ))}
+  </div>
+  <div class="gallery">
+    {imageArrays[1].map(src => (
+      <img src={`${prefix}${src}`} />
+    ))}
+  </div>
+  <div class="gallery">
+    {imageArrays[2].map(src => (
+      <img src={`${prefix}${src}`} />
+    ))}
+  </div>
+</div>
