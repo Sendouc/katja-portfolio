@@ -1,0 +1,20 @@
+---
+import Layout from "../components/Layout.astro"
+import Gallery from "../components/Gallery.astro"
+import images from "../data/images.json"
+---
+
+<style>
+  .intro {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+  }
+</style>
+
+<Layout activeLink="3d">
+    <div class="intro">
+      Various 3D works made primarily in Rhino 7, occasionally alongside Solidworks and some rendered in Blender and V-Ray
+    </div>
+    <Gallery images={images["3d"]} prefix="/img/3d/" />
+</Layout>
