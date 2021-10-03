@@ -1,0 +1,46 @@
+---
+import Layout from "../components/Layout.astro"
+import objects from "../data/objects.json"
+---
+
+<style>
+  .intro {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+  }
+
+  .objects-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 3rem;
+  }
+
+  .object > img {
+    max-width: 500px;
+  }
+
+  .object {
+    text-align: center;
+  }
+
+  h3 {
+    text-transform: uppercase;
+    text-align: center;
+  }
+</style>
+
+<Layout title="Objects" activeLink="objects">
+    <div class="intro">
+      Prototypes and products
+    </div>
+    <div class="objects-gallery">
+      {objects.map(object => (
+        <div class="object">
+          <img src={`/img/objects/${object.img}`} />
+          <h3>{object.title}</h3>
+          <div>{object.desc}</div>
+        </div>
+      ))}
+    </div>
+</Layout>
