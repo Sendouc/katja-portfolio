@@ -3,6 +3,18 @@ import "../global.css"
 import Nav from "./Nav.astro"
 const { title, activeLink } = Astro.props;
 ---
+<style>
+  footer {
+    border-top: 1px solid #dedede;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  footer > div {
+    padding-top: 1rem;
+  }
+</style>
+
 <html lang="en">
   <meta charset="utf-8" />
 	  <link rel="icon" type="image/x-icon" href="/favicon.ico" /> 
@@ -14,5 +26,9 @@ const { title, activeLink } = Astro.props;
   <body>
     <Nav activeLink={activeLink ?? ""} />
     <slot />
+    <footer>
+      <div><a href="mailto:katjavalentina@gmail.com">Contact me at katjavalentina@gmail.com</a></div>
+      <div><a href="https://github.com/Sendouc/katja-portfolio">Source code available on GitHub</a></div>
+    </footer>
   </body>
 </html>
