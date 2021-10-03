@@ -1,0 +1,36 @@
+---
+import Layout from "../../components/Layout.astro"
+import images from "../../data/images.json"
+
+export async function getStaticPaths() {
+  return images["3d"].map(img => ({ params: {img}}));
+}
+
+const { img } = Astro.request.params;
+---
+
+<style>
+  a {
+    display: block;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  img {
+    text-align: center;
+    max-width: 100vw;
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+  }
+</style>
+
+<Layout activeLink="3d">
+  <a href="/3d">← Back to gallery</a>
+  <div>
+    <img src={`/img/3d/${img}`} />
+  </div>
+</Layout>
