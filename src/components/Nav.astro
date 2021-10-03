@@ -9,13 +9,16 @@ const { activeLink } = Astro.props
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
   }
 
   .links-container {
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
 
   a {
