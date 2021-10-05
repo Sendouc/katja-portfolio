@@ -7,6 +7,12 @@ export async function getStaticPaths() {
 }
 
 const { img } = Astro.request.params;
+
+const getDescription = () => {
+  if (!img.includes("teline")) return ""
+
+  return "Render's environment is made of public domain assets from Turbosquid.com by user indepth3d."
+}
 ---
 
 <style>
@@ -26,6 +32,10 @@ const { img } = Astro.request.params;
     display: flex;
     justify-content: center;
   }
+
+  .desc {
+    margin-top: 1rem;
+  }
 </style>
 
 <Layout title="3D Work preview" activeLink="3d">
@@ -33,4 +43,5 @@ const { img } = Astro.request.params;
   <div>
     <img src={`/img/3d/${img}`} />
   </div>
+  <div class="desc">{getDescription()}</div>
 </Layout>
