@@ -1,5 +1,10 @@
 [
   {
+    "title": "Table clocks",
+    "desc": "Prototypes from 3D printed material and wood",
+    "img": "clocks.jpg"
+  },
+  {
     "title": "3D printed lamp",
     "desc": "White ABS plastic, E14 base",
     "img": "IMG_20220419_133230.jpg"
@@ -32,17 +37,5 @@
   {
     "img": "MG_5114.jpeg"
   },
-  {
-    "title": "Model and measurements for custom drinking glass",
-    "img": "mittapiir.png"
-  },
-  {
-    "title": "Balanced glass",
-    "desc": "Produced at Nuutajärvi glass factory with a custom wooden mold",
-    "img": "_I4A1006.jpg"
-  },
-  {
-    "title": "Stacked",
-    "img": "_I4A0997.jpg"
-  }
+
 ]
