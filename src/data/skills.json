@@ -4,19 +4,23 @@
     "progress": "95"
   },
   {
-    "title": "Rhinoceros 7",
-    "progress": "80"
+    "title": "Rhinoceros",
+    "progress": "85"
+  },
+  {
+    "title": "V-Ray",
+    "progress": "70"
   },
   {
     "title": "Solidworks",
-    "progress": "65"
-  },
-  {
-    "title": "Blender",
     "progress": "55"
   },
   {
-    "title": "Adobe Photoshop",
-    "progress": "45"
+    "title": "Blender",
+    "progress": "30"
+  },
+  {
+    "title": "Adobe Illustrator",
+    "progress": "30"
   }
 ]
